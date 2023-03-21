@@ -139,7 +139,7 @@
             <p class="h1">30 siswa diterima</p>
             <p class="h1">40 siswa terdaftar</p>
         </div>
-        <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
+        <p class="h1" style="text-align:center">1500 maksimal siswa</p>
         <div class="d-flex justify-content-center" style="margin-top:4%; margin-bottom:4%">
             <form action="admin_login.php" style="margin-right:20px">
                 <button type="submit" class="btn btn-primary btn-lg">Admin Login</button>
