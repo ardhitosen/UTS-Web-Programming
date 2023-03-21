@@ -39,8 +39,9 @@
         </nav>
     </head>
     <body>
-    <div class="sticky-bottom">
-        <footer
+        
+        <div class="fixed-bottom">
+            <footer
                 class="text-center text-lg-start text-white"
                 style="background-color: #929fba"
                 >
