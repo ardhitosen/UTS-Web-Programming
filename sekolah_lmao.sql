@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 12:28 PM
+-- Generation Time: Mar 21, 2023 at 12:42 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -60,7 +60,8 @@ CREATE TABLE `siswa` (
   `Tempat Lahir` varchar(200) NOT NULL,
   `Tanggal Lahir` date NOT NULL,
   `Alamat` text NOT NULL,
-  `Koordinat` double NOT NULL,
+  `Latitute` double NOT NULL,
+  `Longitute` double NOT NULL,
   `Pas Foto` longblob NOT NULL,
   `Password` varchar(1000) NOT NULL,
   `Status` varchar(50) NOT NULL,
