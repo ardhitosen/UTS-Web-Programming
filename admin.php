@@ -18,12 +18,12 @@
                     <li class="nav-item">
                     <a class="nav-link" href="#">Login </a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                     <a class="nav-link" href="#">Data Siswa</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
-                    </li> -->
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -38,7 +38,143 @@
                     <h2 class="text-center text-lg-start text-white">
                     <marquee> WELCOME ADMIN! </marquee>
                     </h1>
+    </div>
+</div>
+</div>
 
+<table>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+        <div class="swipe-container">
+          <!-- left action -->
+          <div class="action left">
+        
+          </div>
+          <!-- swipeable element -->
+          <div class="swipe-element" style="width:100%">
+            <table>
+              <tbody>
+                <tr>
+                  <td width="10%" valign=middle align=Center nowrap="nowrap">Nama Lengkap</td>
+                  <td width="10%" valign=middle align=Center>Jenis Kelamin</td>
+                  <td width="10%" valign=middle align=Center>Email</td>
+                  <td width="10%" valign=middle align=Center>NISN</td>
+                  <td width="10%" valign=middle align=Center>Tempat, tanggal lahir</td>
+                  <td width="10%" valign=middle align=Center>Alamat</td>
+                  <td width="10%" valign=middle align=Center>NISN</td>
+                  <td width="10%" valign=middle align=Center>Nama Ayah</td>
+                  <td width="10%" valign=middle align=Center>Nama Ibu</td>
+                  <td width="10%" valign=middle align=Center>Status Pendaftaran</td>
+                  
+                </tr>
+                <tr>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Fina Valentina</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Perempuan</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">fina@student.umn.ac.id</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Berhasil</td>
+                </tr>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">David Ongky</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Laki-laki</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">david@student.umn.ac.id</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Berhasil</td>
+                </tr>
+                <tr>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Christoforus Ardhito</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Laki-laki</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">christoforus@student.umn.ac.id</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">xxxxxxxxxxxxxxxx</td>
+                <td width="10%" valign=middle align=Center nowrap="nowrap">Berhasil</td>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- right action -->
+          <div class="action right">
+           
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <style>
+    .swipe-container {
+  display: flex;
+  overflow: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+/* scrollbar should be hidden */
+.swipe-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* main element should always snap into view */
+.swipe-element {
+  scroll-snap-align: start;
+  font-family: sans-serif;
+}
+
+/* actions and element should be 100% wide */
+.action,
+.swipe-element {
+  min-width: 100%;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+}
+
+/* icon should remain sticky */
+i {
+  color: white;
+  position: sticky;
+  left: 16px;
+  right: 16px;
+}
+
+
+
+
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</table>
 
 
 
@@ -60,18 +196,27 @@
                 <div class="row">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">
-                    SMA Juan Terro, Gading Serpong
+                    SMP Juan Terro, Gading Serpong
                     </h6>
                     
                     <div>
                       
-                    <p><i class="fas fa-envelope mr-3"></i> smajuanterro@ac.id 021-123456789</p>
+                    <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id 021-123456789</p>
                     </div>
                    </style>
 
             </section>
             </div>
 
+            <div
+                class="text-center p-3"
+                style="background-color: #6d4c41"
+                >
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/"
+                >MDBootstrap.com</a
+                >
+            </div>
         </footer>
         </div>
     </body>

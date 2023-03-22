@@ -16,14 +16,14 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="#">Login </a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                     <a class="nav-link" href="#">Data Siswa</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
-                    </li> -->
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -36,10 +36,82 @@
                 <div class="row">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h2 class="text-center text-lg-start text-white">
-                    <marquee> WELCOME STUDENTS! </marquee>
+                    <marquee> WELCOME STUDENT'S! </marquee>
                     </h1>
+</div>
+</div>
+</div>
+                    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Student's</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="name" value=""></div>
+                </div>   
+                <div class="col-md-6"><label class="labels">Jenis Kelamin</label></div>
+                <input type="radio" id="Perempuan" name="fav_language" value="Perempuan"><label for="Perempuan">Perempuan</label> <input type="radio" id="Pria" name="fav_language" value="Pria"><label for="Pria">Laki-laki</label><br>
+                    
+                <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" placeholder="name" value=""></div>
+                <div class="col-md-6"><label class="labels">NISN</label><input type="text" class="form-control" placeholder="name" value=""></div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Nama Ibu</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                    <div class="col-md-6"><label class="labels">Nama Ayah</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                </div>
+                </div>
+                    
+<style>
+    body {
+    background: rgb(99, 39, 120)
+}
 
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
 
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+</style>
+</div>
 
 
 
@@ -58,19 +130,22 @@
             <div class="container p-4 pb-0">
             <section class="">
                 <div class="row">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">
-                    SMA Juan Terro, Gading Serpong
+                <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-1 font-weight-bold">
+                    SMP Juan Terro, Gading Serpong
                     </h6>
+                
                     
                     <div>
                       
-                    <p><i class="fas fa-envelope mr-3"></i> smajuanterro@ac.id |   021-123456789</p>
+                    <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
                     </div>
+</div>
                    </style>
 
             </section>
-            </div>
+</div>
+
         </footer>
         </div>
     </body>

@@ -3,11 +3,18 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example">
     <style>
         :root {
-            --primary-color: #929FB9;
+            --primary-color: #6d4c41;
             --secondary-color: #ffb900;
-            --background-color: #929FB9;
+            --background-color: #f5f5f5;
             --text-color: #333333;
             --link-color: #007bff;
         }
@@ -91,14 +98,24 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Academics</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Events</a>
+                            <a class="nav-link" href="#">Ppdb</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
+                        <div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
+    Login Sebagai
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+    <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
+    <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
+   
+  </ul>
+</div>
                     </ul>
                 </div>
             </div>
@@ -132,7 +149,7 @@
 
     <div>
         <br />
-        <h3 class="display-6" style="text-align:center">A Brief Description Of Our School</h3>
+        <h3 class="display-6" style="text-align:center">SMA JUAN TERRO</h3>
         <p class="lead" style="text-align:center">
             Salah satu sekolah menengah tingkat atas swasta terbaik di Gading Serpong, Tangerang Selatan. Dengan terakreditasi A. </p>
             <p class="lead" style="text-align:center">
@@ -141,45 +158,6 @@
             <p class="h1">30 siswa diterima</p>
             <p class="h1">40 siswa terdaftar</p>
         </div>
+        <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
         <p class="h1" style="text-align:center">1500 maksimal siswa</p>
-        <div class="d-flex justify-content-center" style="margin-top:4%; margin-bottom:4%">
-            <form action="admin.php" style="margin-right:20px">
-                <button type="submit" class="btn btn-primary btn-lg">Admin Login</button>
-            </form>
-            <form action="Siswa.php">
-                <button type="submit" class="btn btn-primary btn-lg">User Login</button>
-            </form>
-        </div>
-
-
-    </div>
-    <section>
-                <div style="justify-content:center;text-align:center;color:white">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">
-                    SMA Juan Terro, Gading Serpong
-                    </h6>
-                    
-                    <div>
-                      
-                    <p><i class="fas fa-envelope mr-3"></i> smajuanterro@ac.id 021-123456789</p>
-                    </div>
-                   </style>
-                </div>
-
-            </section>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel();
-        });
-
-        $(document).on('click', '.carousel-control-prev', function() {
-            $('.carousel').carousel('prev');
-        });
-
-        $(document).on('click', '.carousel-control-next', function() {
-            $('.carousel').carousel('next');
-        });
-    </script>
+        
