@@ -32,9 +32,9 @@
                     <h2 class="text-center text-lg-start text-white">
                     <marquee> WELCOME STUDENT'S! </marquee>
                     </h1>
-</div>
-</div>
-</div>
+                </div>
+                </div>
+    </div>
 <div class="card-group">
   <div class="card">
     <img src="..." class="card-img-top" alt="...">
