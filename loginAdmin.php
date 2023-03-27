@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-full">
     <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full space-y-4">
-        <form method="post" action="proses_login.php">
+        <form method="post" action="loginProsesAdmin.php">
             <div class="space-y-2">
                 <label for="email" class="font-medium text-gray-700">Email</label>
                 <input type="text" class="border border-gray-300 rounded-lg py-2 px-3 w-full" id="email" name="email">

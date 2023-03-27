@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+  $id = $_GET['id'];
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
