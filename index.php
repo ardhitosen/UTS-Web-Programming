@@ -8,8 +8,9 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>Bootstrap Example</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body class="p-3 m-0 border-0 bd-example">
+</head>
+
+<body class="p-3 m-0 border-0 bd-example">
     <style>
         :root {
             --primary-color: #6d4c41;
@@ -84,73 +85,72 @@
         }
     </style>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">SMA JUAN TERRO</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ppdb.php">Ppdb</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
-    Login Sebagai
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-    <li><button class="dropdown-item" type="button" href="admin.php">Admin</button></a></li>
-    <li><button class="dropdown-item" type="button" href="siswa.php">Siswa</button></a></li>
-   
-  </ul>
-</div>
-                    </ul>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">SMA JUAN TERRO</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ppdb.php">Ppdb</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
+                                    Login Sebagai
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" role="button" href="loginAdmin.php">Admin</a></li>
+                                    <li><a class="dropdown-item" role="button" href="loginSiswa.php">Siswa</a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="./Images/School1.PNG" alt="First slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School2.PNG" alt="Second slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School3.jpg" alt="Third slide" style="width:800px;height:400px">
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="./Images/School1.PNG" alt="First slide" style="width:800px;height:400px">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./Images/School2.PNG" alt="Second slide" style="width:800px;height:400px">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./Images/School3.jpg" alt="Third slide" style="width:800px;height:400px">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-    </div>
 
-    <div>
-        <br />
-        <h3 class="display-6" style="text-align:center">SMA JUAN TERRO</h3>
-        <p class="lead" style="text-align:center">
-            Salah satu sekolah menengah tingkat atas swasta terbaik di Gading Serpong, Tangerang Selatan. Dengan terakreditasi A.  SMA Juan Terro telah berdiri sejak tahun 2022 dan mempunyai banyak prestasi baik dibidang akademik maupun non akademik </p>
-        
-        
+        <div>
+            <br />
+            <h3 class="display-6" style="text-align:center">SMA JUAN TERRO</h3>
+            <p class="lead" style="text-align:center">
+                Salah satu sekolah menengah tingkat atas swasta terbaik di Gading Serpong, Tangerang Selatan. Dengan terakreditasi A. SMA Juan Terro telah berdiri sejak tahun 2022 dan mempunyai banyak prestasi baik dibidang akademik maupun non akademik </p>
+        </div>
+    </body>
