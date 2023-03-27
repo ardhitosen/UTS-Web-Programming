@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Menu</title>
+        <title>Pengumuman</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Student's Menu</a>
@@ -35,30 +36,59 @@
 </div>
 </div>
 </div>
-<div class="card-group">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Pendaftaran PPDB</h5>
-      <a href="prosesRegister.php" class="btn btn-primary">Click Here</a>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Cetak Kartu</h5>
-      <a href="#" class="btn btn-primary">Click Here</a>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Pengumuman</h5>
-      <a href="pengumuman.php" class="btn btn-primary">Click Here</a>
-    </div>
-  </div>
 </div>
 
+<div class="typewriter">
+  <h1>PENGUMUMAN PPDB SMP JUAN TERRO TAHUN AJARAN 2023/2024</h1>
+  
+<style>
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: blue;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+  justify-content: center;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+</style>
+</div>
+<h2><center>SILAHKAN MASUKKAN NAMA DAN NISN ANDA</center></h2>
+<div class="container">
+        <form method="post" action="hasil.php">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="name" name="email">
+                </div>
+                <div class="form-group">
+                <div class="form-group">
+                    <label for="name">NISN</label>
+                    <input type="text" class="form-control" id="name" name="email">
+                <button id="Login" type="submit" class="btn btn-primary">Check</button>
+            </form>
+        </div>
+
+
+
+
+        
  
 
 

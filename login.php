@@ -167,7 +167,7 @@
           Remember me
         </label>
       </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary">Login</button>
   </form>
   <div class="dropdown-divider"></div>
   <a class="dropdown-item" href="#">Belum punya akun? Sign up</a>

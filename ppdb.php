@@ -95,13 +95,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="ppdb.php">Ppdb</a>
+                            <a class="nav-link" href="#">Ppdb</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
@@ -111,8 +111,8 @@
     Login Sebagai
   </button>
   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-    <li><button class="dropdown-item" type="button" href="admin.php">Admin</button></a></li>
-    <li><button class="dropdown-item" type="button" href="siswa.php">Siswa</button></a></li>
+    <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
+    <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
    
   </ul>
 </div>
@@ -150,7 +150,12 @@
     <div>
         <br />
         <h3 class="display-6" style="text-align:center">SMA JUAN TERRO</h3>
-        <p class="lead" style="text-align:center">
-            Salah satu sekolah menengah tingkat atas swasta terbaik di Gading Serpong, Tangerang Selatan. Dengan terakreditasi A.  SMA Juan Terro telah berdiri sejak tahun 2022 dan mempunyai banyak prestasi baik dibidang akademik maupun non akademik </p>
-        
+            <p class="lead" style="text-align:center">
+            Kapasitas kuota ppdb SMA Juan Terro tahun ajaran 2023/2024 tercatat sebanyak. </p>
+        <div style="margin: 10%;display:flex;align-items:center;justify-content:space-between;">
+            <p class="h1">30 siswa diterima</p>
+            <p class="h1">40 siswa terdaftar</p>
+        </div>
+        <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
+        <p class="h1" style="text-align:center">1500 maksimal siswa</p>
         

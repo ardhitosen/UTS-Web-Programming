@@ -16,15 +16,33 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Login </a>
+                    <a class="nav-link" href="admin.php">Data Siswa</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Data Siswa</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="ProfileAdmin.php">Profile</a>
                     </li>
                 </ul>
+                <div class="search-container">
+    
+                <input type="text" placeholder="Search.." name="search">
+               
+                </form>
+                <style>
+                  .topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+  </style>
+                </div>
                 </div>
             </div>
         </nav>

@@ -6,7 +6,7 @@
         <title>Admin Menu</title>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Student's Menu</a>
+                <a class="navbar-brand" href="#">Admin Menu</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -14,6 +14,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="admin.php">Data Siswa</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
@@ -30,7 +33,7 @@
                 <div class="row">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h2 class="text-center text-lg-start text-white">
-                    <marquee> WELCOME STUDENT'S! </marquee>
+                    <marquee> WELCOME ADMIN! </marquee>
                     </h1>
 </div>
 </div>
@@ -43,20 +46,16 @@
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Student's</h4>
+                    <h4 class="text-right">Profile Admin</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="name" value=""></div>
+                    <div class="col-md-6"><label class="labels">Nama</label><input type="text" class="form-control" placeholder="name" value=""></div>
                 </div>   
                 <div class="col-md-6"><label class="labels">Jenis Kelamin</label></div>
                 <input type="radio" id="Perempuan" name="fav_language" value="Perempuan"><label for="Perempuan">Perempuan</label> <input type="radio" id="Pria" name="fav_language" value="Pria"><label for="Pria">Laki-laki</label><br>
                     
                 <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" placeholder="name" value=""></div>
-                <div class="col-md-6"><label class="labels">NISN</label><input type="text" class="form-control" placeholder="name" value=""></div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nama Ibu</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Nama Ayah</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                </div>
+                <div class="col-md-6"><label class="labels">Jabatan</label><input type="text" class="form-control" placeholder="name" value=""></div>
                 </div>
                     
 <style>
