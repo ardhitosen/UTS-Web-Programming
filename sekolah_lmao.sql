@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 11:56 AM
+-- Generation Time: Mar 27, 2023 at 12:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -58,6 +58,7 @@ CREATE TABLE `siswa` (
   `IDsiswa` int(10) NOT NULL,
   `NISN` varchar(50) NOT NULL,
   `Nama` varchar(100) NOT NULL,
+  `Email` varchar(300) NOT NULL,
   `Tempat Lahir` varchar(200) NOT NULL,
   `Tanggal Lahir` date NOT NULL,
   `Alamat` text NOT NULL,
@@ -94,6 +95,7 @@ ALTER TABLE `siswa`
   ADD PRIMARY KEY (`IDsiswa`),
   ADD UNIQUE KEY `Recovery key` (`Recovery key`),
   ADD UNIQUE KEY `NISN` (`NISN`),
+  ADD UNIQUE KEY `Email` (`Email`),
   ADD KEY `berkas` (`berkas`);
 
 --
