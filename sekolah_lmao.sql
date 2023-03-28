@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 12:16 PM
+-- Generation Time: Mar 28, 2023 at 06:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -39,7 +39,6 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `berkas` (
-  `IDsiswa` int(10) NOT NULL,
   `IDberkas` int(10) NOT NULL,
   `Nama Ayah` int(100) NOT NULL,
   `Nama Ibu` int(100) NOT NULL,
@@ -85,8 +84,7 @@ ALTER TABLE `admin`
 -- Indexes for table `berkas`
 --
 ALTER TABLE `berkas`
-  ADD PRIMARY KEY (`IDberkas`),
-  ADD KEY `IDsiswa` (`IDsiswa`);
+  ADD PRIMARY KEY (`IDberkas`);
 
 --
 -- Indexes for table `siswa`
@@ -117,12 +115,6 @@ ALTER TABLE `siswa`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `berkas`
---
-ALTER TABLE `berkas`
-  ADD CONSTRAINT `berkas_ibfk_1` FOREIGN KEY (`IDsiswa`) REFERENCES `siswa` (`IDsiswa`);
 
 --
 -- Constraints for table `siswa`
