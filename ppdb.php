@@ -1,3 +1,16 @@
+<?php
+    $dsn = "mysql:host=localhost;dbname=utswebpro";
+    $db = new PDO($dsn, "root", "");
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Diterima'";
+    $hasil = $db->query($sql);
+    $diterima = $hasil->fetch(PDO::FETCH_ASSOC);
+
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar'";
+    $hasil = $db->query($sql);
+    $terdaftar = $hasil->fetch(PDO::FETCH_ASSOC);
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -153,9 +166,10 @@
             <p class="lead" style="text-align:center">
             Kapasitas kuota ppdb SMA Juan Terro tahun ajaran 2023/2024 tercatat sebanyak. </p>
         <div style="margin: 10%;display:flex;align-items:center;justify-content:space-between;">
-            <p class="h1">30 siswa diterima</p>
-            <p class="h1">40 siswa terdaftar</p>
+            <p class="h1"><?php echo $diterima['jumlah']?> siswa diterima</p>
+            <p class="h1"><?php echo $terdaftar['jumlah']?> siswa terdaftar</p>
         </div>
         <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
         <p class="h1" style="text-align:center">1500 maksimal siswa</p>
+    </div>
         
