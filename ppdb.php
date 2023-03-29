@@ -120,15 +120,15 @@
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
-    Login Sebagai
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-    <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
-    <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
-   
-  </ul>
-</div>
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
+                                Login Sebagai
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
+                                <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
+                            
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
