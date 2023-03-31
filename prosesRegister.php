@@ -46,7 +46,7 @@
         exit;
     }else{
         session_unset();
-        $dsn = "mysql:host=localhost;dbname=utswebpro";
+        $dsn = "mysql:host=localhost;dbname=sekolah_lmao";
         $db = new PDO($dsn, "root", "");
         
         $nama = $_POST['nama'];
