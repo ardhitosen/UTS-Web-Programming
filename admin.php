@@ -59,7 +59,7 @@
     </div>
 </div>
 </div>
-
+}
 <table>
   
   <tbody>
@@ -127,7 +127,7 @@
           </div>
           <!-- right action -->
           <div class="action right">
-           
+
           </div>
         </div>
       </td>

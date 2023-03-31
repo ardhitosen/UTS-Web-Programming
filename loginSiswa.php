@@ -22,7 +22,7 @@
             </div>
             <div class="flex justify-between items-center">
                 <a href="formLupaPassword.php" class="text-blue-500">Lupa Password</a>
-                <a href="formSignUp.php" class="text-blue-500">Sign Up</a>
+                <a href="formRegis.php" class="text-blue-500">Sign Up</a>
             </div>
             <button id="Login" type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg shadow-md hover:bg-blue-600 transition duration-200">Login</button>
         </form>
