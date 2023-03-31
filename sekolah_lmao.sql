@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 11:36 AM
+-- Generation Time: Mar 31, 2023 at 01:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `sekolah_lmao`
 --
+CREATE DATABASE IF NOT EXISTS `sekolah_lmao` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sekolah_lmao`;
 
 -- --------------------------------------------------------
 
@@ -27,9 +29,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id` varchar(500) NOT NULL,
-  `pass` varchar(1000) NOT NULL
+  `pass` varchar(1000) NOT NULL,
+  `priv` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='table id admin';
 
 -- --------------------------------------------------------
@@ -38,13 +42,14 @@ CREATE TABLE `admin` (
 -- Table structure for table `berkas`
 --
 
+DROP TABLE IF EXISTS `berkas`;
 CREATE TABLE `berkas` (
   `IDberkas` int(10) NOT NULL,
-  `Nama Ayah` varchar(100) NOT NULL,
-  `Nama Ibu` varchar(100) NOT NULL,
-  `Ijazah SD` longtext NOT NULL,
-  `Akte Lahir` longtext NOT NULL,
-  `Status` varchar(50) NOT NULL
+  `Nama Ayah` varchar(100) DEFAULT NULL,
+  `Nama Ibu` varchar(100) DEFAULT NULL,
+  `Ijazah SD` varchar(500) DEFAULT NULL,
+  `Akte Lahir` varchar(500) DEFAULT NULL,
+  `Status` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -53,6 +58,7 @@ CREATE TABLE `berkas` (
 -- Table structure for table `siswa`
 --
 
+DROP TABLE IF EXISTS `siswa`;
 CREATE TABLE `siswa` (
   `IDsiswa` int(10) NOT NULL,
   `NISN` varchar(50) NOT NULL,
@@ -67,7 +73,8 @@ CREATE TABLE `siswa` (
   `Password` varchar(1000) NOT NULL,
   `Status` varchar(50) NOT NULL,
   `berkas` int(10) DEFAULT NULL,
-  `Recovery key` varchar(60) NOT NULL
+  `Recovery key` varchar(60) NOT NULL,
+  `nis` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
