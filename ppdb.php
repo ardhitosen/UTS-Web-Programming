@@ -1,3 +1,16 @@
+<?php
+    $dsn = "mysql:host=localhost;dbname=utswebpro";
+    $db = new PDO($dsn, "root", "");
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Diterima'";
+    $hasil = $db->query($sql);
+    $diterima = $hasil->fetch(PDO::FETCH_ASSOC);
+
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar'";
+    $hasil = $db->query($sql);
+    $terdaftar = $hasil->fetch(PDO::FETCH_ASSOC);
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -88,34 +101,34 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">SMA JUAN TERRO</a>
+                <a class="navbar-brand" href="index.php">SMA JUAN TERRO</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ppdb</a>
+                            <a class="nav-link" href="ppdb.php">Ppdb</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
-    Login Sebagai
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-    <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
-    <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
-   
-  </ul>
-</div>
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
+                                Login Sebagai
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
+                                <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
+                            
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -153,9 +166,10 @@
             <p class="lead" style="text-align:center">
             Kapasitas kuota ppdb SMA Juan Terro tahun ajaran 2023/2024 tercatat sebanyak. </p>
         <div style="margin: 10%;display:flex;align-items:center;justify-content:space-between;">
-            <p class="h1">30 siswa diterima</p>
-            <p class="h1">40 siswa terdaftar</p>
+            <p class="h1"><?php echo $diterima['jumlah']?> siswa diterima</p>
+            <p class="h1"><?php echo $terdaftar['jumlah']?> siswa terdaftar</p>
         </div>
         <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
         <p class="h1" style="text-align:center">1500 maksimal siswa</p>
+    </div>
         

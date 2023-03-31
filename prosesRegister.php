@@ -1,6 +1,35 @@
 <?php
     session_start();
 
+    $filename = $_FILES['pasFoto']['name'];
+    $temp_file = $_FILES['pasFoto']['tmp_name'];
+    $file_ext = explode(".", $filename);
+    $file_ext = end($file_ext);
+    $file_ext = strtolower($file_ext);
+    switch($file_ext){
+        case 'jpg':
+        case 'jpeg':
+        case 'png':
+        case 'svg':
+        case 'webp':
+        case 'bmp':
+        case 'gif':
+            break;
+        default: $_SESSION['salah'] = " Jenis File Salah";
+                $_SESSION['nama'] = $_POST['nama'];
+                $_SESSION['NISN'] = $_POST['NISN'];
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['tempatLahir'] = $_POST['tempatLahir'];
+                $_SESSION['tanggalLahir'] = $_POST['tanggalLahir'];
+                $_SESSION['alamat'] = $_POST['alamat'];
+                $_SESSION['latitude'] = $_POST['latitude'];
+                $_SESSION['longitude'] = $_POST['longitude'];
+                $_SESSION['pasFoto'] = $_POST['pasFoto'];
+                $_SESSION['password'] = $_POST['password'];
+                header("location:formRegis.php");
+                exit;
+    }
+
     if($_POST['password'] != $_POST['confirmPassword']){
         $_SESSION['nama'] = $_POST['nama'];
         $_SESSION['NISN'] = $_POST['NISN'];
@@ -17,9 +46,38 @@
         exit;
     }else{
         session_unset();
-        echo "hehe";
-        // echo date('d-m-Y', strtotime($_post['tanggalLahir']));
-        // echo  $_SESSION['pasFoto'];
-        // echo date('Y-m-d',strtotime($_SESSION['tanggalLahir']));
+        $dsn = "mysql:host=localhost;dbname=utswebpro";
+        $db = new PDO($dsn, "root", "");
+        
+        $nama = $_POST['nama'];
+        $NISN = $_POST['NISN'];
+        $email = $_POST['email'];
+        $tempatLahir = $_POST['tempatLahir'];
+        $tanggalLahir = $_POST['tanggalLahir'];
+        $alamat = $_POST['alamat'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
+
+        // $filename = basename($_FILES['pasFoto'] ['name']);
+        // $filetype = pathinfo($filename, PATHINFO_EXTENSION);
+        // $pasFoto = $_FILES['pasFoto'] ['tmp_name'];
+        // $pasContent = addslashes(file_get_contents($pasFoto));
+    
+        move_uploaded_file($temp_file, "pasFoto/{$filename}");
+        $path = "pasFoto/{$filename}";
+
+        $password = $_POST['password'];
+        $en_pass = password_hash($password, PASSWORD_BCRYPT);
+        
+        $securityKey = rand(100000, 999999);
+
+        $sql = "INSERT INTO siswa (NISN ,Nama, email, `Tempat Lahir`, `Tanggal Lahir`, Alamat, Latitute, Longitute, `Pas Foto`, Password, Status,`recovery key`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $result = $db->prepare($sql);
+        $result->execute([$NISN, $nama, $email, $tempatLahir, $tanggalLahir, $alamat, $latitude, $longitude, $path, $en_pass, "Belum Diterima", $securityKey]);
+
+        $sql = "UPDATE siswa SET berkas = IDsiswa ORDER BY IDsiswa desc LIMIT 1";
+        $result = $db->query($sql);
+        header('location: index.php');
     }
 ?>
