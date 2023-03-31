@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
                     <a class="nav-link active" aria-current="page" href="dataPendaftar.php">Data Pendaftar</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
+                    <a class="nav-link active" aria-current="page" href="UploadBerkas.php">Upload Berkas</a>
                     </li>
                     <li class="nav-item">
     <a class="nav-link <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="AddUsers.php">Add Users</a>

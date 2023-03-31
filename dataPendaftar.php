@@ -10,7 +10,7 @@ if (isset($_SESSION['email'])) {
 
 $dsn = "mysql:host=localhost;dbname=sekolah_lmao";
 $kunci = new PDO($dsn, "root", "");
-$sql2 = "SELECT * FROM siswa WHERE Status='Belum Diterima'";
+$sql2 = "SELECT * FROM siswa WHERE Status='Belum Terdaftar'";
 $hasil = $kunci->query($sql2);
 
 ?>

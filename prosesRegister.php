@@ -74,7 +74,7 @@
         $sql = "INSERT INTO siswa (NISN ,Nama, email, `Tempat Lahir`, `Tanggal Lahir`, Alamat, Latitute, Longitute, `Pas Foto`, Password, Status, `recovery key`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $result = $db->prepare($sql);
-        $result->execute([$NISN, $nama, $email, $tempatLahir, $tanggalLahir, $alamat, $latitude, $longitude, $path, $en_pass, "Belum Diterima", $securityKey]);
+        $result->execute([$NISN, $nama, $email, $tempatLahir, $tanggalLahir, $alamat, $latitude, $longitude, $path, $en_pass, "Belum Terdaftar", $securityKey]);
 
         $sql = "INSERT INTO berkas (IDberkas) SELECT IDsiswa FROM siswa ORDER BY IDsiswa desc LIMIT 1";
         $result = $db->query($sql);
