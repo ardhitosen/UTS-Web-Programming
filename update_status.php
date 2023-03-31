@@ -1,5 +1,5 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=sekolah_lmao', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=utswebpro', 'root', '');
 
 $id = $_POST['id'];
 $status = $_POST['status'];

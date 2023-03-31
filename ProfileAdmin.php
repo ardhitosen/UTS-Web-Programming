@@ -1,6 +1,6 @@
 <?php
 session_start();
-define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
+define('DSN', 'mysql:host=localhost;dbname=utswebpro');
     define('DBUSER', 'root');
     define('DBPASS', '');
 

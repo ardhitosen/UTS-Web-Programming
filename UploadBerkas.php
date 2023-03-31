@@ -8,7 +8,7 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 
-$dsn = "mysql:host=localhost;dbname=sekolah_lmao";
+$dsn = "mysql:host=localhost;dbname=utswebpro";
 $kunci = new PDO($dsn, "root", "");
 $sql2 = "SELECT * FROM siswa WHERE Status='Belum Diterima'";
 $hasil = $kunci->query($sql2);

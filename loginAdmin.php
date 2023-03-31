@@ -1,39 +1,56 @@
 <?php
-if (isset($_POST['submit'])) {
-    define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
-    define('DBUSER', 'root');
-    define('DBPASS', '');
+session_start();
+require_once __DIR__.'/vendor/autoload.php';
+use Gregwar\Captcha\CaptchaBuilder;
 
-    $db = new PDO(DSN, DBUSER, DBPASS);
+// $builder = new CaptchaBuilder();
+// $builder->build();
+// $_SESSION['phrase'] = $builder->getPhrase();
 
-    $id = $_POST['email'];
-    $password = $_POST['password'];
+// if (isset($_POST['submit'])) {
+//     define('DSN', 'mysql:host=localhost;dbname=utswebpro');
+//     define('DBUSER', 'root');
+//     define('DBPASS', '');
 
-    $sql = "SELECT * FROM admin WHERE id = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->execute([$id]);
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//     $db = new PDO(DSN, DBUSER, DBPASS);
 
-    if (!$row) {
-        echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" style="margin-right:2%" role="alert">
-                  <strong class="font-bold">Oops!</strong>
-                  <span class="block sm:inline"> Wrong username or password.</span>
-              </div>';
-    } else {
-        if ($password != $row['pass']) {
-            echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                      <strong class="font-bold">Oops!</strong>
-                      <span class="block sm:inline"> Wrong username or password.</span>
-                  </div>';
-        } else {
-            session_start();
-            $_SESSION['email'] = $id;
-            header('location: ProfileAdmin.php');
-            exit();
-        }
-    }
-}
+//     $id = $_POST['email'];
+//     $password = $_POST['password'];
+//     $captcha = $_POST['captcha'];
 
+//     $sql = "SELECT * FROM admin WHERE id = ?";
+//     $stmt = $db->prepare($sql);
+//     $stmt->execute([$id]);
+//     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     if (!$row) {
+//         echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" style="margin-right:2%" role="alert">
+//                   <strong class="font-bold">Oops!</strong>
+//                   <span class="block sm:inline"> Wrong username or password.</span>
+//               </div>';
+//     } else {
+//         if($_SESSION['phrase'] != $captcha){
+//             echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+//             <strong class="font-bold">Oops!</strong>
+//             <span class="block sm:inline"> Wrong username or password.</span>
+//             </div>';
+//         }if ($password != $row['pass']) {
+//             echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+//                       <strong class="font-bold">Oops!</strong>
+//                       <span class="block sm:inline"> Wrong username or password.</span>
+//                   </div>';
+//         } else {
+//             $_SESSION['email'] = $id;
+//             header('location: ProfileAdmin.php');
+//             exit();
+//         }
+//     }
+
+
+
+$builder = new CaptchaBuilder();
+$builder->build();
+$_SESSION['phrase'] = $builder->getPhrase();
 ?>
 
 <html class="h-full">
@@ -47,7 +64,7 @@ if (isset($_POST['submit'])) {
 
 <body class="bg-gray-100 flex items-center justify-center h-full">
     <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full space-y-4">
-        <form method="post">
+        <form method="post" action="loginProsesAdmin.php">
             <div class="space-y-2">
                 <label for="email" class="font-medium text-gray-700">Email</label>
                 <input type="text" class="border border-gray-300 rounded-lg py-2 px-3 w-full" id="email" name="email">
@@ -56,7 +73,15 @@ if (isset($_POST['submit'])) {
                 <label for="password" class="font-medium text-gray-700">Password</label>
                 <input type="password" class="border border-gray-300 rounded-lg py-2 px-3 w-full" id="password" name="password">
             </div>
-            <button id="Login" name="submit" type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg shadow-md hover:bg-blue-600 transition duration-200">Login</button>
+            <div class="flex justify-between items-center">
+                <img src="<?php echo $builder->inline(); ?>" />
+                <input type="text"  class="border border-gray-300 rounded-lg py-2 px-3 w-full" placeholder="Masukkan Text Disamping" name="captcha" required>
+            </div>
+            <?php if(isset($_SESSION['error'])) { ?>
+                <p class="text-red-500 mt-2"><?php echo $_SESSION['error']; ?></p>
+            <?php unset($_SESSION['error']);} ?>
+            <?php echo $_SESSION['phrase'] ?>
+            <button id="Login" type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg shadow-md hover:bg-blue-600 transition duration-200 <?php if(isset($_SESSION['error'])) {echo 'mt-4';} ?>">Login</button>
         </form>
     </div>
 </body>
