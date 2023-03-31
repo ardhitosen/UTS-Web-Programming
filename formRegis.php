@@ -1,5 +1,11 @@
 <?php
     session_start();
+    require_once __DIR__.'/vendor/autoload.php';
+    use Gregwar\Captcha\CaptchaBuilder;
+
+    $builder = new CaptchaBuilder();
+    $builder->build();
+    $_SESSION['phrase'] = $builder->getPhrase();
 ?>
 
 
@@ -62,9 +68,15 @@
                     <div class="form-group">
                         <label for="name">Confirm Password:</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
-                        <?php if(isset($_SESSION['salah'])) {echo $_SESSION['salah'];
-                        unset($_SESSION['salah']);} ?>
+                    <br/>
                     </div>
+                    <div class="form-group">
+                        <img src="<?php echo $builder->inline(); ?>" />
+                        <input type="text"  class="border border-gray-300 rounded-lg py-2 px-3 w-full" placeholder="Masukkan Text Disamping" name="captcha" required>
+                    </div>
+                    <?php if(isset($_SESSION['salah'])) { ?>
+                        <p class="alert alert-danger"><?php echo $_SESSION['salah']; ?></p>
+                    <?php unset($_SESSION['salah']);} ?>
                     <br/>
                     <button id="register" type="submit" class="btn btn-primary" name="register">Register</button>
             </form>
