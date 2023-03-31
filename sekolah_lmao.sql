@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 01:00 PM
+-- Generation Time: Mar 31, 2023 at 05:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sekolah_lmao`
 --
-CREATE DATABASE IF NOT EXISTS `sekolah_lmao` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `sekolah_lmao`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `sekolah_lmao`;
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id` varchar(500) NOT NULL,
   `pass` varchar(1000) NOT NULL,
@@ -42,7 +39,6 @@ CREATE TABLE `admin` (
 -- Table structure for table `berkas`
 --
 
-DROP TABLE IF EXISTS `berkas`;
 CREATE TABLE `berkas` (
   `IDberkas` int(10) NOT NULL,
   `Nama Ayah` varchar(100) DEFAULT NULL,
@@ -58,7 +54,6 @@ CREATE TABLE `berkas` (
 -- Table structure for table `siswa`
 --
 
-DROP TABLE IF EXISTS `siswa`;
 CREATE TABLE `siswa` (
   `IDsiswa` int(10) NOT NULL,
   `NISN` varchar(50) NOT NULL,
@@ -80,12 +75,6 @@ CREATE TABLE `siswa` (
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `berkas`
