@@ -1,8 +1,17 @@
 <?php
 session_start();
+define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
+    define('DBUSER', 'root');
+    define('DBPASS', '');
 
+    $db = new PDO(DSN, DBUSER, DBPASS);
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
+    $sql2 = "SELECT priv FROM admin WHERE id = ?";
+    $stmt2 = $db->prepare($sql2);
+    $stmt2->execute([$email]);
+    $row = $stmt2->fetch(PDO::FETCH_ASSOC);
+
     
 } else {
     header('location: loginAdmin.php');
@@ -10,11 +19,6 @@ if (isset($_SESSION['email'])) {
 }
 
 if (isset($_POST['submit'])) {
-    define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
-    define('DBUSER', 'root');
-    define('DBPASS', '');
-
-    $db = new PDO(DSN, "root", "");
     $newEmail = $_POST['email'];
     $sql = "UPDATE admin SET id = ? WHERE id = ?";
     $stmt = $db->prepare($sql);
@@ -24,6 +28,12 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+<style>
+    a.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+</style>
 
 <html>
     <head>
@@ -46,8 +56,11 @@ if (isset($_POST['submit'])) {
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
-                    <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
                     </li>
+                    <li class="nav-item">
+    <a class="nav-link <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="AddUsers.php">Add Users</a>
+</li>
+
                 </ul>
                 </div>
             </div>
