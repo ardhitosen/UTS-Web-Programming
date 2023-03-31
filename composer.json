@@ -1,6 +1,7 @@
 {
     "require": {
         "phpoffice/phpspreadsheet": "^1.28",
-        "gregwar/captcha": "^1.2"
+        "gregwar/captcha": "^1.2",
+        "setasign/fpdf": "1.8"
     }
 }
