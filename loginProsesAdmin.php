@@ -31,7 +31,6 @@
             header('location: loginAdmin.php');
         }else{
             unset($_SESSION['phrase']);
-            $_SESSION['error'] = "sdasda";
             $_SESSION['email'] = $id;
             header('location: ProfileAdmin.php');
         }
