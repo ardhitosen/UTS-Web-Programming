@@ -71,13 +71,21 @@
         
         $securityKey = rand(100000, 999999);
 
-        $sql = "INSERT INTO siswa (NISN ,Nama, email, `Tempat Lahir`, `Tanggal Lahir`, Alamat, Latitute, Longitute, `Pas Foto`, Password, Status,`recovery key`)
+        $sql = "INSERT INTO siswa (NISN ,Nama, email, `Tempat Lahir`, `Tanggal Lahir`, Alamat, Latitute, Longitute, `Pas Foto`, Password, Status, `recovery key`)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $result = $db->prepare($sql);
         $result->execute([$NISN, $nama, $email, $tempatLahir, $tanggalLahir, $alamat, $latitude, $longitude, $path, $en_pass, "Belum Diterima", $securityKey]);
 
-        $sql = "UPDATE siswa SET berkas = IDsiswa ORDER BY IDsiswa desc LIMIT 1";
+        $sql = "INSERT INTO berkas (IDberkas) SELECT IDsiswa FROM siswa ORDER BY IDsiswa desc LIMIT 1";
         $result = $db->query($sql);
+
+        $sql = "SELECT IDsiswa FROM siswa ORDER BY IDsiswa DESC limit 1";
+        $hasil = $db->query($sql);
+        $row = $hasil->fetch(PDO::FETCH_ASSOC);
+
+        $sql = "UPDATE siswa SET berkas = {$row['IDsiswa']} WHERE IDsiswa = {$row['IDsiswa']}";
+        $hasil = $db->query($sql);
+
         header('location: index.php');
     }
 ?>

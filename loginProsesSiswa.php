@@ -1,6 +1,7 @@
 <?php
+session_start();
 
-define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
+define('DSN', 'mysql:host=localhost;dbname=utswebpro');
 define('DBUSER','root');  
 define('DBPASS','');
 
@@ -20,10 +21,10 @@ if(!$row)
     echo "Wrong username/password";
 }else
 {
-    if($password != $row['pass']){
+    if(password_verify($password, $row['Password'])){
         echo "Wrong username/password";
     }else{
-
-        header('location: Siswa.php?id=' . $userid);
+        $_SESSION['userid'] = $row['IDsiswa'];
+        header('location: Siswa.php');
     }
 }
