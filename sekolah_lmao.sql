@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 11:04 AM
+-- Generation Time: Mar 31, 2023 at 11:36 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -66,7 +66,7 @@ CREATE TABLE `siswa` (
   `Pas Foto` longblob NOT NULL,
   `Password` varchar(1000) NOT NULL,
   `Status` varchar(50) NOT NULL,
-  `berkas` int(10) NOT NULL,
+  `berkas` int(10) DEFAULT NULL,
   `Recovery key` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
