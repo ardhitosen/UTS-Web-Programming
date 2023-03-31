@@ -26,10 +26,14 @@ if (isset($_POST['submit'])) {
                       <span class="block sm:inline"> Wrong username or password.</span>
                   </div>';
         } else {
+            session_start();
+            $_SESSION['email'] = $id;
             header('location: ProfileAdmin.php');
+            exit();
         }
     }
 }
+
 ?>
 
 <html class="h-full">
