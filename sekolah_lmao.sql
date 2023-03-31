@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 06:57 AM
+-- Generation Time: Mar 31, 2023 at 11:04 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,10 +40,10 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `berkas` (
   `IDberkas` int(10) NOT NULL,
-  `Nama Ayah` int(100) NOT NULL,
-  `Nama Ibu` int(100) NOT NULL,
-  `Ijazah SD` longblob NOT NULL,
-  `Akte Lahir` longblob NOT NULL,
+  `Nama Ayah` varchar(100) NOT NULL,
+  `Nama Ibu` varchar(100) NOT NULL,
+  `Ijazah SD` longtext NOT NULL,
+  `Akte Lahir` longtext NOT NULL,
   `Status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -99,12 +99,6 @@ ALTER TABLE `siswa`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `berkas`
---
-ALTER TABLE `berkas`
-  MODIFY `IDberkas` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `siswa`
