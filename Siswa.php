@@ -53,7 +53,7 @@
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Cetak Kartu</h5>
-      <a href="#" class="btn btn-primary">Click Here</a>
+      <button onclick="JavaScript:window.location.href='pdfcreator.php?file=doc.pdf';" class="btn btn-primary"> Click Here</button><br />
     </div>
   </div>
   <div class="card">
@@ -91,11 +91,11 @@
                       
                     <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
                     </div>
-</div>
+                    </div>
                    </style>
 
             </section>
-</div>
+            </div>
 
         </footer>
         </div>

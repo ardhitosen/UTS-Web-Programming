@@ -82,7 +82,7 @@
         }
     </style>
 
-    <body>
+    
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
@@ -118,7 +118,7 @@
                 </div>
             </nav>
         </header>
-
+        <body>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
