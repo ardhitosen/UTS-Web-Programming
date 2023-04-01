@@ -58,8 +58,11 @@ if (isset($_POST['submit'])) {
                     <a class="nav-link active" aria-current="page" href="UploadBerkas.php">Upload Berkas</a>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="AddUsers.php">Add Users</a>
-</li>
+                    <a class="nav-link active <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="AddUsers.php">Add Users</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logout.php" >Logout</a>
+                    </li>
 
                 </ul>
                 </div>

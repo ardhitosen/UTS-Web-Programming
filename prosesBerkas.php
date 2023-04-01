@@ -36,6 +36,7 @@
     unset($_SESSION['salah']);
     unset($_SESSION['namaAyah']);
     unset($_SESSION['namaIbu']);
+    $userid = $_SESSION['id'];
     $dsn = "mysql:host=localhost;dbname=utswebpro";
     $db = new PDO($dsn, "root", "");
     
@@ -43,13 +44,16 @@
     $namaIbu = $_POST['namaIbu'];
 
     move_uploaded_file($temp_file, "ijazah/{$filename}");
-    $path1 = "pasFoto/{$filename}";
+    $path1 = "ijazah/{$filename}";
     move_uploaded_file($temp_file2, "akteLahir/{$filename2}");
-    $path2 = "pasFoto/{$filename2}";
+    $path2 = "akteLahir/{$filename2}";
 
-    $sql = "INSERT INTO berkas (IDberkas ,`Nama Ayah`, `Nama Ibu`, `Ijazah SD`, `Akte Lahir`)
-            VALUES (?, ?, ?, ?, ?)";
+    $sql = "UPDATE berkas SET `Nama Ayah` = ?, `Nama Ibu` = ?, `Ijazah SD` = ?, `Akte Lahir` = ? WHERE IDberkas = ?";
     $result = $db->prepare($sql);
-    $result->execute([$userid, $namaAyah, $namaIbu, $path1, $path2]);
+    $result->execute([$namaAyah, $namaIbu, $path1, $path2, $userid]);
+
+    $sql = "UPDATE siswa SET Status = 'Belum Diterima' WHERE IDsiswa = ?";
+    $result = $db->prepare($sql);
+    $result->execute([$userid]);
     header('location: siswa.php');
 ?>

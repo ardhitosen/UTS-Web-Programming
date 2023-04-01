@@ -1,6 +1,6 @@
 <?php
 session_start();
-define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
+define('DSN', 'mysql:host=localhost;dbname=utswebpro');
 define('DBUSER', 'root');
 define('DBPASS', '');
 
@@ -54,12 +54,14 @@ if (isset($_POST['submit'])) {
                         <a class="nav-link active" aria-current="page" href="dataPendaftar.php">Data Pendaftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
+                        <a class="nav-link active" aria-current="page" href="uploadBerkas.php">Upload Berkas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="admin.php">Add Users</a>
+                        <a class="nav-link active <?php echo ($row['priv'] !== 'real') ? 'disabled' : ''; ?>" href="admin.php">Add Users</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="logout.php" >Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -118,7 +120,7 @@ if (isset($_POST['submit'])) {
                     </thead>
                     <tbody>
                         <?php
-                        $db = new PDO('mysql:host=localhost;dbname=sekolah_lmao', 'root', '');
+                        $db = new PDO('mysql:host=localhost;dbname=utswebpro', 'root', '');
                         $stmt = $db->query("SELECT * FROM admin WHERE priv = 'fake'");
                         $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

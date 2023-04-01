@@ -10,8 +10,9 @@ if (isset($_SESSION['email'])) {
 
 $dsn = "mysql:host=localhost;dbname=utswebpro";
 $kunci = new PDO($dsn, "root", "");
-$sql2 = "SELECT * FROM siswa WHERE Status='Belum Diterima'";
-$hasil = $kunci->query($sql2);
+
+$sql1 = "SELECT * FROM siswa JOIN berkas ON siswa.berkas = berkas.IDberkas WHERE siswa.Status = 'Belum Diterima'";
+$hasil1 = $kunci->query($sql1);
 
 ?>
 
@@ -36,7 +37,10 @@ $hasil = $kunci->query($sql2);
                         <a class="nav-link active" aria-current="page" href="dataPendaftar.php">Data Pendaftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
+                        <a class="nav-link active" aria-current="page" href="uploadBerkas.php">Upload Berkas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="logout.php" >Logout</a>
                     </li>
                 </ul>
             </div>
@@ -72,22 +76,26 @@ $hasil = $kunci->query($sql2);
             </thead>
             <tbody>
                 <?php
-                while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
-                    $id = $row['IDsiswa'];
-                    $stmt = $kunci->prepare("SELECT * FROM berkas JOIN siswa ON siswa.IDsiswa=berkas.IDberkas WHERE siswa.IDsiswa = ?");
-                    $stmt->execute([$row['IDsiswa']]);
-                    $row2 = $stmt->fetch(PDO::FETCH_ASSOC);
+                while ($row = $hasil1->fetch(PDO::FETCH_ASSOC)) {
+                    $arrayId []= $row['IDberkas']; 
+                    // $id = $row['IDsiswa'];
+                    // $stmt = $kunci->prepare("SELECT * FROM berkas JOIN siswa ON siswa.IDsiswa=berkas.IDberkas WHERE siswa.IDsiswa = ?");
+                    // $stmt->execute([$row['IDsiswa']]);
+                    // $row2 = $stmt->fetch(PDO::FETCH_ASSOC);
                 ?>
                     <tr>
-                        <td><?= $row2['Nama Ayah'] ?></td>
-                        <td><?= $row2['Nama Ibu'] ?></td>
+                        <td><?= $row['Nama'] ?></td>
+                        <td><?= $row['Nama Ayah'] ?></td>
+                        <td><?= $row['Nama Ibu'] ?></td>
                         <td>
-                            <a href="<?= $row2['Ijazah SD'] ?>" download="Ijazah_SD.pdf" class="btn btn-primary">Download</a>
-                            <a href="<?= $row2['Ijazah SD'] ?>">View</a>
+                        <form method="post" action="viewPdf.php">
+                            <input type="hidden" name="ijazah" value="<?php echo $row['Ijazah SD'] ?>">
+                            <input type="submit" class="btn btn-primary" value="Download">
+                        </form>
                         </td>
                         <td>
-                            <a href="<?= $row2['Akte Lahir'] ?>" download="Akte_Lahir.pdf" class="btn btn-primary">Download</a>
-                            <a href="<?= $row2['Akte Lahir'] ?>">View</a>
+                            <a href="<?= $row['Akte Lahir'] ?>" download="Akte_Lahir.pdf" class="btn btn-primary">Download</a>
+                            <a href="<?= $row['Akte Lahir'] ?>">View</a>
                         </td>
 
                         <td>

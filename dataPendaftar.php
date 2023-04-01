@@ -36,7 +36,10 @@ $hasil = $kunci->query($sql2);
                         <a class="nav-link active" aria-current="page" href="dataPendaftar.php">Data Pendaftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin.php">Upload Berkas</a>
+                        <a class="nav-link active" aria-current="page" href="uploadBerkas.php">Upload Berkas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="logout.php" >Logout</a>
                     </li>
                 </ul>
             </div>
