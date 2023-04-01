@@ -33,7 +33,7 @@ if(!$row)
         header('location: loginSiswa.php');
     }else{
         unset($_SESSION['phrase']);
-        $_SESSION['userid'] = $row['IDsiswa'];
+        $_SESSION['id'] = $row['IDsiswa'];
         header('location: Siswa.php');
     }
 }

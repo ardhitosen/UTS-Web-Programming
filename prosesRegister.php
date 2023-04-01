@@ -100,6 +100,6 @@
         $sql = "UPDATE siswa SET berkas = {$row['IDsiswa']} WHERE IDsiswa = {$row['IDsiswa']}";
         $hasil = $db->query($sql);
 
-        header('location: index.php');
+        header('location: loginSiswa.php');
     }
 ?>
