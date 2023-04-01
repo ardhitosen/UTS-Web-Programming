@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 05:36 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 01 Apr 2023 pada 20.20
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sekolah_lmao`
+-- Database: `utswebpro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,10 +33,17 @@ CREATE TABLE `admin` (
   `priv` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='table id admin';
 
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id`, `pass`, `priv`) VALUES
+('davidongky', '909090', 'real');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berkas`
+-- Struktur dari tabel `berkas`
 --
 
 CREATE TABLE `berkas` (
@@ -45,13 +52,20 @@ CREATE TABLE `berkas` (
   `Nama Ibu` varchar(100) DEFAULT NULL,
   `Ijazah SD` varchar(500) DEFAULT NULL,
   `Akte Lahir` varchar(500) DEFAULT NULL,
-  `Status` varchar(50) DEFAULT NULL
+  `Status` varchar(50) DEFAULT 'Belom Approved'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `berkas`
+--
+
+INSERT INTO `berkas` (`IDberkas`, `Nama Ayah`, `Nama Ibu`, `Ijazah SD`, `Akte Lahir`, `Status`) VALUES
+(2, 'dadadaw', 'asdadsad', 'ijazah/00000055626_Tugas1.pdf', 'akteLahir/00000055626_Tugas2.pdf', 'Belum Approved');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -64,7 +78,7 @@ CREATE TABLE `siswa` (
   `Alamat` text NOT NULL,
   `Latitute` double NOT NULL,
   `Longitute` double NOT NULL,
-  `Pas Foto` longblob NOT NULL,
+  `Pas Foto` varchar(500) NOT NULL,
   `Password` varchar(1000) NOT NULL,
   `Status` varchar(50) NOT NULL,
   `berkas` int(10) DEFAULT NULL,
@@ -73,17 +87,24 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`IDsiswa`, `NISN`, `Nama`, `Email`, `Tempat Lahir`, `Tanggal Lahir`, `Alamat`, `Latitute`, `Longitute`, `Pas Foto`, `Password`, `Status`, `berkas`, `Recovery key`, `nis`) VALUES
+(2, '1231231', 'davidongky', 'davidongky', 'asdasd', '1232-02-23', 'adsasdas', 1232131, 123131, 'pasFoto/lofi_generator (1).png', '$2y$10$pmv4SZzwg2JcE32wa9EX1u7jrtfHO2FLqrIOWp2cSrdWokLgN0ZwK', 'Belum Diterima', 2, '720491', 0);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `berkas`
+-- Indeks untuk tabel `berkas`
 --
 ALTER TABLE `berkas`
   ADD PRIMARY KEY (`IDberkas`);
 
 --
--- Indexes for table `siswa`
+-- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`IDsiswa`),
@@ -93,21 +114,21 @@ ALTER TABLE `siswa`
   ADD KEY `berkas` (`berkas`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `IDsiswa` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDsiswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `siswa`
+-- Ketidakleluasaan untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`berkas`) REFERENCES `berkas` (`IDberkas`);
