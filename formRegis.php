@@ -32,7 +32,7 @@
                     <br/>
                     <div class="form-group">
                         <label for="name">Email:</label>
-                        <input type="text" class="form-control" id="name" name="email" value="<?php echo isset($_SESSION['email'])? $_SESSION['email'] : '' ?>" required>
+                        <input type="email" class="form-control" id="name" name="email" value="<?php echo isset($_SESSION['email'])? $_SESSION['email'] : '' ?>" required>
                     </div>
                     <br/>
                     <div class="form-group">

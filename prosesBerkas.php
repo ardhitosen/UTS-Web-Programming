@@ -48,9 +48,9 @@
     move_uploaded_file($temp_file2, "akteLahir/{$filename2}");
     $path2 = "akteLahir/{$filename2}";
 
-    $sql = "UPDATE berkas SET `Nama Ayah` = ?, `Nama Ibu` = ?, `Ijazah SD` = ?, `Akte Lahir` = ? WHERE IDberkas = ?";
+    $sql = "UPDATE berkas SET `Nama Ayah` = ?, `Nama Ibu` = ?, `Ijazah SD` = ?, `Akte Lahir` = ?, Status = ? WHERE IDberkas = ?";
     $result = $db->prepare($sql);
-    $result->execute([$namaAyah, $namaIbu, $path1, $path2, $userid]);
+    $result->execute([$namaAyah, $namaIbu, $path1, $path2, "Belum Approved", $userid]);
 
     $sql = "UPDATE siswa SET Status = 'Belum Diterima' WHERE IDsiswa = ?";
     $result = $db->prepare($sql);

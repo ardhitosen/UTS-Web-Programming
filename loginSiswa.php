@@ -27,7 +27,7 @@
                 <input type="password" class="border border-gray-300 rounded-lg py-2 px-3 w-full" id="password" name="password" required>
             </div>
             <div class="flex justify-between items-center">
-                <a href="formLupaPassword.php" class="text-blue-500">Lupa Password</a>
+                <a href="forgotPass.php" class="text-blue-500">Lupa Password</a>
                 <a href="formRegis.php" class="text-blue-500">Sign Up</a>
             </div>
             <div class="flex justify-between items-center">

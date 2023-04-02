@@ -88,13 +88,11 @@ $hasil1 = $kunci->query($sql1);
                         <td><?= $row['Nama Ayah'] ?></td>
                         <td><?= $row['Nama Ibu'] ?></td>
                         <td>
-                        <form method="post" action="viewPdf.php">
-                            <input type="hidden" name="ijazah" value="<?php echo $row['Ijazah SD'] ?>">
-                            <input type="submit" class="btn btn-primary" value="Download">
-                        </form>
+                            <a href="<?= $row['Ijazah SD'] ?>" download="<?= $row['Ijazah SD'] ?>" class="btn btn-primary">Download</a>
+                            <a href="<?= $row['Ijazah SD'] ?>">View</a>
                         </td>
                         <td>
-                            <a href="<?= $row['Akte Lahir'] ?>" download="Akte_Lahir.pdf" class="btn btn-primary">Download</a>
+                            <a href="<?= $row['Akte Lahir'] ?>" download="<?= $row['Akte Lahir'] ?>" class="btn btn-primary">Download</a>
                             <a href="<?= $row['Akte Lahir'] ?>">View</a>
                         </td>
 

@@ -6,17 +6,20 @@
         <title>Admin Menu</title>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Student's Menu</a>
+                <a class="navbar-brand" href="Siswa.php">Student's Menu</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link active" aria-current="page" href="Siswa.php">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link active" aria-current="page" href="profile.php">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
                     </li>
                 </ul>
                 </div>
@@ -29,12 +32,12 @@
             <section class="">
                 <div class="row">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h2 class="text-center text-lg-start text-white">
-                    <marquee> WELCOME STUDENT'S! </marquee>
-                    </h1>
-</div>
-</div>
-</div>
+                        <h2 class="text-center text-lg-start text-white">
+                        <marquee> WELCOME STUDENT'S! </marquee>
+                        </h1>
+                    </div>
+                </div>
+    </div>
                     <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">

@@ -1,12 +1,13 @@
 <?php
-
+session_start();
 if (isset($_POST['submit'])) {
 
     $email = $_POST['email'];
     $new_password = $_POST['new_password'];
     $recovery_key = $_POST['recovery_key'];
+    $enpass = password_hash($new_password, PASSWORD_BCRYPT);
 
-    define('DSN', 'mysql:host=localhost;dbname=sekolah_lmao');
+    define('DSN', 'mysql:host=localhost;dbname=utswebpro');
     define('DBUSER', 'root');
     define('DBPASS', '');
 
@@ -18,17 +19,18 @@ if (isset($_POST['submit'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$row) {
-        echo "Email not found!";
+        unset($_SESSION['notFound']);
+        $_SESSION['notFound'] = "Email not found!";
     } else {
-        $userid = $row['id'];
+        $userid = $row['IDsiswa'];
         if ($recovery_key != $row['Recovery key']) {
-            echo "Wrong key!";
+            $_SESSION['notFound'] = "Recovery key salah";
         } else {
 
             $sql2 = "UPDATE siswa SET password= ? WHERE IDSiswa = ?";
             $stmt = $db->prepare($sql2);
-            $stmt->execute([$new_password,$userid]);
-            header('Location: login.php');
+            $stmt->execute([$enpass,$userid]);
+            header('Location: loginSiswa.php');
             exit();
         }
     }
@@ -68,7 +70,7 @@ if (isset($_POST['submit'])) {
                                 <label for="recovery_key">Recovery Key:</label>
                                 <input type="text" class="form-control" name="recovery_key" required>
                             </div>
-
+                            <?php if(isset($_SESSION['notFound'])){echo $_SESSION['notFound']; unset($_SESSION['notFound']);} ?>
                             <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">Reset Password</button>
                         </form>
 
