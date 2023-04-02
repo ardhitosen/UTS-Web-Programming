@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Apr 2023 pada 20.20
+-- Waktu pembuatan: 02 Apr 2023 pada 10.02
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -60,7 +60,7 @@ CREATE TABLE `berkas` (
 --
 
 INSERT INTO `berkas` (`IDberkas`, `Nama Ayah`, `Nama Ibu`, `Ijazah SD`, `Akte Lahir`, `Status`) VALUES
-(2, 'dadadaw', 'asdadsad', 'ijazah/00000055626_Tugas1.pdf', 'akteLahir/00000055626_Tugas2.pdf', 'Belum Approved');
+(2, 'awdada', 'zcxzcz', 'ijazah/00000055626_Tugas1.pdf', 'akteLahir/00000055626_Tugas2.pdf', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`IDsiswa`, `NISN`, `Nama`, `Email`, `Tempat Lahir`, `Tanggal Lahir`, `Alamat`, `Latitute`, `Longitute`, `Pas Foto`, `Password`, `Status`, `berkas`, `Recovery key`, `nis`) VALUES
-(2, '1231231', 'davidongky', 'davidongky', 'asdasd', '1232-02-23', 'adsasdas', 1232131, 123131, 'pasFoto/lofi_generator (1).png', '$2y$10$pmv4SZzwg2JcE32wa9EX1u7jrtfHO2FLqrIOWp2cSrdWokLgN0ZwK', 'Belum Diterima', 2, '720491', 0);
+(2, '1231231', 'davidongky', 'davidongky@d', 'asdasd', '1232-02-23', 'adsasdas', 1232131, 123131, 'pasFoto/lofi_generator (1).png', '$2y$10$BLXxxTB13DGq1DE/NXUbAO9xWmmjvj6Do9b0ZFZT6gHEZanVkUXoa', 'Diterima', 2, '720491', 3287);
 
 --
 -- Indexes for dumped tables
