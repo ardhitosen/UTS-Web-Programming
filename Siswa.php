@@ -17,6 +17,16 @@
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
+<style>
+.card-img-top {
+  height: 200px;
+  padding-top: 43px;
+  padding-bottom: 43px;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+</style>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,8 +69,8 @@
     </div>
     <div class="card-group">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/files-icon.png" class="card-img-top" alt="berkas">
+        <div style="text-align:center" class="card-body">
           <h5 class="card-title">Unggah Berkas</h5>
           <form action="formBerkas.php">
             <button class="btn btn-primary" id="buttonBerkas" <?php if($row['Status'] == "Belum Terdaftar" || $row['Status'] == "Ditolak" || $row['Status'] == "Diterima"){echo "disabled";}?>>Click Here</button>
@@ -68,15 +78,15 @@
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://cdn-icons-png.flaticon.com/512/3022/3022251.png" class="card-img-top" alt="cetak" width="10px" height="10px">
+        <div class="card-body" style="text-align:center">
           <h5 class="card-title">Cetak Kartu</h5>
           <button onclick="JavaScript:window.location.href='pdfcreator.php?file=doc.pdf';" class="btn btn-primary" id="buttonCetak" <?php if($row['Status'] != "Diterima"){echo "disabled";}?>> Click Here</button><br />
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://static.thenounproject.com/png/4733434-200.png" class="card-img-top" alt="pengumuman">
+        <div class="card-body" style="text-align:center">
           <h5 class="card-title">Pengumuman</h5>
           <a href="pengumuman.php" class="btn btn-primary">Click Here</a>
         </div>
