@@ -5,7 +5,7 @@
     $hasil = $db->query($sql);
     $diterima = $hasil->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar'";
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar' OR Status='Diterima'";
     $hasil = $db->query($sql);
     $terdaftar = $hasil->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -111,13 +111,7 @@
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="ppdb.php">Ppdb</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <div class="btn-group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
@@ -170,6 +164,5 @@
             <p class="h1"><?php echo $terdaftar['jumlah']?> siswa terdaftar</p>
         </div>
         <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
-        <p class="h1" style="text-align:center">1500 maksimal siswa</p>
     </div>
         

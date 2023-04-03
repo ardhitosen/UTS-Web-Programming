@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once 'vendor/fpdf.php'; // import FPDF library
+
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 } else {
@@ -13,7 +15,8 @@ $kunci = new PDO($dsn, "root", "");
 $sql2 = "SELECT * FROM siswa WHERE Status='Belum Terdaftar'";
 $hasil = $kunci->query($sql2);
 
-function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+function calculateDistance($lat1, $lon1, $lat2, $lon2)
+{
     $R = 6371;
     $dLat = deg2rad($lat2 - $lat1);
     $dLon = deg2rad($lon2 - $lon1);
@@ -53,7 +56,7 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2) {
                         <a class="nav-link active" aria-current="page" href="uploadBerkas.php">Upload Berkas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="logout.php" >Logout</a>
+                        <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -100,8 +103,8 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2) {
                         <td><?= $row['Nama'] ?></td>
                         <td><?= $row['Tanggal Lahir'] ?></td>
                         <td><?= $row['Tempat Lahir'] ?></td>
-                        <td><?=floor($age)?></td>
-                        <td><?= ceil(calculateDistance($row['Latitute'],$row['Longitute'],-6.257566, 106.618279)) ?> Km</td>
+                        <td><?= floor($age) ?></td>
+                        <td><?= ceil(calculateDistance($row['Latitute'], $row['Longitute'], -6.257566, 106.618279)) ?> Km</td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -134,6 +137,7 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2) {
                 ?>
             </tbody>
         </table>
+        <button onclick="JavaScript:window.location.href='export.php?file=exported.pdf';" class="btn btn-primary" id="buttonCetak"> Click Here</button><br />
     </div>
 
     </div>
