@@ -17,6 +17,16 @@
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
+<style>
+.card-img-top {
+  height: 200px;
+  padding-top: 43px;
+  padding-bottom: 43px;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+</style>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,8 +70,8 @@
 
     <div class="card-group">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/files-icon.png" class="card-img-top" alt="berkas">
+        <div style="text-align:center" class="card-body">
           <h5 class="card-title">Unggah Berkas</h5>
           <form action="formBerkas.php">
             <button class="btn btn-primary" id="buttonBerkas" <?php if($row['Status'] == "Belum Terdaftar" || $row['Status'] == "Ditolak" || $row['Status'] == "Diterima"){echo "disabled";}?>>Click Here</button>
@@ -69,46 +79,21 @@
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://cdn-icons-png.flaticon.com/512/3022/3022251.png" class="card-img-top" alt="cetak" width="10px" height="10px">
+        <div class="card-body" style="text-align:center">
           <h5 class="card-title">Cetak Kartu</h5>
           <button onclick="JavaScript:window.location.href='pdfcreator.php?file=doc.pdf';" class="btn btn-primary" id="buttonCetak" <?php if($row['Status'] != "Diterima"){echo "disabled";}?>> Click Here</button><br />
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="https://static.thenounproject.com/png/4733434-200.png" class="card-img-top" alt="pengumuman">
+        <div class="card-body" style="text-align:center">
           <h5 class="card-title">Pengumuman</h5>
           <a href="pengumuman.php" class="btn btn-primary">Click Here</a>
         </div>
       </div>
     </div>
 
- 
-    <div class="sticky-bottom">
-        
-        <div class="fixed-bottom">
-            <footer
-                class="text-center text-lg-start text-white"
-                style="background-color: #929fba"
-            >
-            <div class="container p-4 pb-0">
-            <section">
-                <div class="row">
-                <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-1 font-weight-bold">
-                    SMP Juan Terro, Gading Serpong
-                    </h6>
-      
-                    <div>
-                    <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
-                    </div>
-                    </div>
-                   </style>
-            </section>
-            </div>
-        </footer>
-        </div>
     </body>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

@@ -13,6 +13,20 @@ $kunci = new PDO($dsn, "root", "");
 $sql2 = "SELECT * FROM siswa WHERE Status='Belum Terdaftar'";
 $hasil = $kunci->query($sql2);
 
+function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+    $R = 6371;
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLon = deg2rad($lon2 - $lon1);
+    $lat1 = deg2rad($lat1);
+    $lat2 = deg2rad($lat2);
+
+    $a = sin($dLat / 2) * sin($dLat / 2) + sin($dLon / 2) * sin($dLon / 2) * cos($lat1) * cos($lat2);
+    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+    $distance = $R * $c;
+
+    return $distance;
+}
+
 ?>
 
 <html>
@@ -71,6 +85,7 @@ $hasil = $kunci->query($sql2);
                     <th>Age</th>
                     <th>Distance</th>
                     <th></th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,8 +100,8 @@ $hasil = $kunci->query($sql2);
                         <td><?= $row['Nama'] ?></td>
                         <td><?= $row['Tanggal Lahir'] ?></td>
                         <td><?= $row['Tempat Lahir'] ?></td>
-                        <td><?=$age?></td>
-                        <td><?= $row['Latitute'] ?></td>
+                        <td><?=floor($age)?></td>
+                        <td><?= ceil(calculateDistance($row['Latitute'],$row['Longitute'],-6.257566, 106.618279)) ?> Km</td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
