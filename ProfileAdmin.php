@@ -70,7 +70,6 @@ if (isset($_POST['submit'])) {
         </nav>
     </head>
     <body>
-
         <div class="container p-4 pb-0" style="background-color: #929fba">
             <section class="">
                 <div class="row">
@@ -82,30 +81,27 @@ if (isset($_POST['submit'])) {
                 </div>
             </section>
         </div>
-
         <div class="container mt-5">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="https://blog.minifigures.com/wp-content/uploads/2019/09/classic-smile.jpg" class="rounded-circle me-3" width="150" height="150" alt="Profile Picture">
-                </div>
-                <div class="col-md-9">
-                    <h5 class="card-title mb-4">Profile</h5>
-                    <form method="POST">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="https://blog.minifigures.com/wp-content/uploads/2019/09/classic-smile.jpg" class="rounded-circle me-3" width="150" height="150" alt="Profile Picture">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="submit">Save</button>
-                    </form>
+                        <div class="col-md-9">
+                            <h5 class="card-title mb-4">Profile</h5>
+                            <form method="POST">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="submit">Save</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
     </body>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

@@ -38,94 +38,117 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-</head>
-
-<body>
-
-    <div class="container p-4 pb-0" style="background-color: #929fba">
-        <section class="">
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h2 class="text-center text-lg-start text-white">
+        </nav>
+    </head>
+    <body>
+        <div class="container p-4 pb-0" style="background-color: #929fba">
+            <section class="">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h2 class="text-center text-lg-start text-white">
                         <marquee> WELCOME STUDENT'S! </marquee>
                         </h1>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 
+        <div class="typewriter">
+            <h1>PENGUMUMAN PPDB SMA JUAN TERRO</h1>
+
+            <style>
+                /* DEMO-SPECIFIC STYLES */
+                .typewriter h1 {
+                    color: blue;
+                    font-family: monospace;
+                    overflow: hidden;
+                    /* Ensures the content is not revealed until the animation */
+                    border-right: .15em solid orange;
+                    /* The typwriter cursor */
+                    white-space: nowrap;
+                    /* Keeps the content on a single line */
+                    margin: 0 auto;
+                    /* Gives that scrolling effect as the typing happens */
+                    letter-spacing: .15em;
+                    /* Adjust as needed */
+                    animation:
+                        typing 3.5s steps(30, end),
+                        blink-caret .5s step-end infinite;
+                    justify-content: center;
+                }
+
+                /* The typing effect */
+                @keyframes typing {
+                    from {
+                        width: 0
+                    }
+
+                    to {
+                        width: 100%
+                    }
+                }
+
+                /* The typewriter cursor effect */
+                @keyframes blink-caret {
+
+                    from,
+                    to {
+                        border-color: transparent
+                    }
+
+                    50% {
+                        border-color: orange
+                    }
+                }
+            </style>
+        </div>
+        -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card" style="margin-top:10%">
+                        <div class="card-body text-center">
+                            <h1 class="mb-4">Status Pendaftaran Anda</h1>
+                            <h2><?php echo $row['sStatus']; ?></h2>
+                            <?php if ($row['bStatus'] == "Approved" && $row['sStatus'] == "Diterima") { ?>
+                                <p class="mt-4 mb-5 text-success">Selamat! Anda telah diterima di sekolah kami.</p>
+                            <?php } else if ($row['bStatus'] == "File Ditolak" && $row['sStatus'] == "Belum Diterima") { ?>
+                                <p class="mt-4 mb-5 text-danger">Mohon maaf, berkas anda ditolak. Silakan kirimkan ulang berkas yang baru.</p>
+                            <?php } else if ($row['bStatus'] == "Belum Approved" && $row['sStatus'] == "Belum Diterima") { ?>
+                                <p class="mt-4 mb-5 text-warning">Berkas anda sedang dalam tahap pengecekan oleh admin.</p>
+                            <?php } else if ($row['sStatus'] == "Diterima") { ?>
+                                <p class="mt-4 mb-5 text-success">Selamat! Anda lolos seleksi. Silakan lakukan upload berkas.</p>
+                            <?php } else if ($row['sStatus'] == "Ditolak") { ?>
+                                <p class="mt-4 mb-5 text-danger">Mohon maaf, anda tidak lolos masuk ke sekolah kami.</p>
+                            <?php } else if ($row['sStatus'] == "Belum Terdaftar") { ?>
+                                <p class="mt-4 mb-5 text-warning">Pendaftaran anda sedang diseleksi oleh admin.</p>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-    </div>
-<!-- 
-    <div class="typewriter">
-        <h1>PENGUMUMAN PPDB SMA JUAN TERRO</h1>
-
-        <style>
-            /* DEMO-SPECIFIC STYLES */
-            .typewriter h1 {
-                color: blue;
-                font-family: monospace;
-                overflow: hidden;
-                /* Ensures the content is not revealed until the animation */
-                border-right: .15em solid orange;
-                /* The typwriter cursor */
-                white-space: nowrap;
-                /* Keeps the content on a single line */
-                margin: 0 auto;
-                /* Gives that scrolling effect as the typing happens */
-                letter-spacing: .15em;
-                /* Adjust as needed */
-                animation:
-                    typing 3.5s steps(30, end),
-                    blink-caret .5s step-end infinite;
-                justify-content: center;
-            }
-
-            /* The typing effect */
-            @keyframes typing {
-                from {
-                    width: 0
-                }
-
-                to {
-                    width: 100%
-                }
-            }
-
-            /* The typewriter cursor effect */
-            @keyframes blink-caret {
-
-                from,
-                to {
-                    border-color: transparent
-                }
-
-                50% {
-                    border-color: orange
-                }
-            }
-        </style> -->
-    </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card" style="margin-top:10%">
-                    <div class="card-body text-center">
-                        <h1 class="mb-4">Status Pendaftaran Anda</h1>
-                        <h2><?php echo $row['sStatus']; ?></h2>
-                        <?php if ($row['bStatus'] == "Approved" && $row['sStatus'] == "Diterima") { ?>
-                            <p class="mt-4 mb-5 text-success">Selamat! Anda telah diterima di sekolah kami.</p>
-                        <?php } else if ($row['bStatus'] == "File Ditolak" && $row['sStatus'] == "Belum Diterima") { ?>
-                            <p class="mt-4 mb-5 text-danger">Mohon maaf, berkas anda ditolak. Silakan kirimkan ulang berkas yang baru.</p>
-                        <?php } else if ($row['bStatus'] == "Belum Approved" && $row['sStatus'] == "Belum Diterima") { ?>
-                            <p class="mt-4 mb-5 text-warning">Berkas anda sedang dalam tahap pengecekan oleh admin.</p>
-                        <?php } else if ($row['sStatus'] == "Diterima") { ?>
-                            <p class="mt-4 mb-5 text-success">Selamat! Anda lolos seleksi. Silakan lakukan upload berkas.</p>
-                        <?php } else if ($row['sStatus'] == "Ditolak") { ?>
-                            <p class="mt-4 mb-5 text-danger">Mohon maaf, anda tidak lolos masuk ke sekolah kami.</p>
-                        <?php } else if ($row['sStatus'] == "Belum Terdaftar") { ?>
-                            <p class="mt-4 mb-5 text-warning">Pendaftaran anda sedang diseleksi oleh admin.</p>
-                        <?php } ?>
+        </div>
+        <div class="sticky-bottom">
+            <div class="fixed-bottom">
+                <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+                    <div class="container p-4 pb-0">
+                    <section">
+                        <div class="row">
+                            <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-1 font-weight-bold">
+                                SMP Juan Terro, Gading Serpong
+                                </h6>
+                                <div>
+                                <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     </div>
-</body>
+                </footer>
+            </div>
+        </div>
+    </body>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 

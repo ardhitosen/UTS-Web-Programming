@@ -75,31 +75,31 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2)
                     </h2>
                 </div>
             </div>
-        </section>
-    </div>
-
-    <div class="container mt-5">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date of Birth</th>
-                    <th>Place of Birth</th>
-                    <th>Age</th>
-                    <th>Distance</th>
-                    <th></th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
-                    $stmt = $kunci->prepare('SELECT DATEDIFF(CURDATE(), `Tanggal Lahir`)/365 AS age FROM siswa WHERE IDsiswa = ?');
-                    $stmt->execute([$row['IDsiswa']]);
-                    $age = $stmt->fetchColumn();
-
-                ?>
+        </nav>
+    </head>
+    <body>
+        <div class="container p-4 pb-0" style="background-color: #929fba">
+            <section class="">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h2 class="text-center text-lg-start text-white">
+                            <marquee> WELCOME ADMIN! </marquee>
+                        </h2>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container mt-5">
+            <table class="table">
+                <thead>
                     <tr>
+                    <?php
+                    while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
+                        $stmt = $kunci->prepare('SELECT DATEDIFF(CURDATE(), Tanggal Lahir)/365 AS age FROM siswa WHERE IDsiswa = ?');
+                        $stmt->execute([$row['IDsiswa']]);
+                        $age = $stmt->fetchColumn();
+
+                    ?>
                         <td><?= $row['Nama'] ?></td>
                         <td><?= $row['Tanggal Lahir'] ?></td>
                         <td><?= $row['Tempat Lahir'] ?></td>
@@ -146,5 +146,4 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2)
 </body>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
 </html>
