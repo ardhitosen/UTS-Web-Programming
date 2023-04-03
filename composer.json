@@ -1,4 +1,5 @@
 {
+    "platform-check": false,
     "require": {
         "phpoffice/phpspreadsheet": "^1.28",
         "gregwar/captcha": "^1.2",
