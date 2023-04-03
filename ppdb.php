@@ -5,7 +5,7 @@
     $hasil = $db->query($sql);
     $diterima = $hasil->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar' OR Status='Diterima'";
+    $sql = "SELECT count(*) as jumlah FROM siswa WHERE Status = 'Terdaftar' OR Status = 'Diterima' OR Status = 'Belum Diterima'";
     $hasil = $db->query($sql);
     $terdaftar = $hasil->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -118,46 +118,27 @@
                 color: var(--text-color);
             }
 
-        .btn-secondary {
-            background-color: var(--background-color);
-            border-color: var(--text-color);
-            color: var(--text-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--text-color);
-        }
-    </style>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">SMA JUAN TERRO</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ppdb.php">Ppdb</a>
-                        </li>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
-                                Login Sebagai
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                <li><button class="dropdown-item" type="button" a href="admin.php">Admin</button></a></li>
-                                <li><button class="dropdown-item" type="button" a href="siswa.php">Siswa</button></a></li>
-                            
-                            </ul>
-                        </div>
-                    </ul>
+            .btn-secondary:hover {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+                color: var(--text-color);
+            }
+        </style>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="./Images/School1.PNG" alt="First slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School2.PNG" alt="Second slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School3.jpg" alt="Third slide" style="width:800px;height:400px">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -180,6 +161,6 @@
             <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
             <p class="h1" style="text-align:center">1500 maksimal siswa</p>
         </div>
-        <p class="h1" style="text-align:center">1500 maksimal siswa/siswi</p>
-    </div>
+    </body>
+</html>
         

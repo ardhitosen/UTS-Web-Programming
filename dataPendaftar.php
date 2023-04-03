@@ -75,27 +75,26 @@ function calculateDistance($lat1, $lon1, $lat2, $lon2)
                     </h2>
                 </div>
             </div>
-        </nav>
+</div>
     </head>
     <body>
-        <div class="container p-4 pb-0" style="background-color: #929fba">
-            <section class="">
-                <div class="row">
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h2 class="text-center text-lg-start text-white">
-                            <marquee> WELCOME ADMIN! </marquee>
-                        </h2>
-                    </div>
-                </div>
-            </section>
-        </div>
         <div class="container mt-5">
             <table class="table">
-                <thead>
+            <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Place of Birth</th>
+                        <th>Age</th>
+                        <th>Distance</th>
+                        <th></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
                     <tr>
                     <?php
                     while ($row = $hasil->fetch(PDO::FETCH_ASSOC)) {
-                        $stmt = $kunci->prepare('SELECT DATEDIFF(CURDATE(), Tanggal Lahir)/365 AS age FROM siswa WHERE IDsiswa = ?');
+                        $stmt = $kunci->prepare("SELECT DATEDIFF(CURDATE(), 'Tanggal Lahir')/365 AS age FROM siswa WHERE IDsiswa = ?");
                         $stmt->execute([$row['IDsiswa']]);
                         $age = $stmt->fetchColumn();
 
