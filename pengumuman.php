@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['id'])){
+    header("location: index.php");
+  }
 define('DSN', 'mysql:host=localhost;dbname=utswebpro');
 define('DBUSER', 'root');
 define('DBPASS', '');

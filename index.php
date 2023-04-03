@@ -92,10 +92,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.php">Home</a>
+                                <a class="nav-link active" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ppdb.php">Ppdb</a>
+                                <a class="nav-link active" href="ppdb.php">Ppdb</a>
                             </li>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">
@@ -113,30 +113,30 @@
         </header>
 
         <body>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="./Images/School1.PNG" alt="First slide" style="width:800px;height:400px">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="./Images/School1.PNG" alt="First slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School2.PNG" alt="Second slide" style="width:800px;height:400px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="./Images/School3.jpg" alt="Third slide" style="width:800px;height:400px">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./Images/School2.PNG" alt="Second slide" style="width:800px;height:400px">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./Images/School3.jpg" alt="Third slide" style="width:800px;height:400px">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-    </div>
 
 
 
@@ -147,3 +147,4 @@
                     Salah satu sekolah menengah tingkat atas swasta terbaik di Gading Serpong, Tangerang Selatan. Dengan terakreditasi A. SMA Juan Terro telah berdiri sejak tahun 2022 dan mempunyai banyak prestasi baik dibidang akademik maupun non akademik </p>
             </div>
         </body>
+    </html>
