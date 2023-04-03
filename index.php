@@ -81,8 +81,6 @@
             color: var(--text-color);
         }
     </style>
-
-    
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
@@ -96,13 +94,7 @@
                                 <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="ppdb.php">Ppdb</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
                             </li>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" align="right">

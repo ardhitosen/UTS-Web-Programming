@@ -3,51 +3,6 @@ session_start();
 require_once __DIR__.'/vendor/autoload.php';
 use Gregwar\Captcha\CaptchaBuilder;
 
-// $builder = new CaptchaBuilder();
-// $builder->build();
-// $_SESSION['phrase'] = $builder->getPhrase();
-
-// if (isset($_POST['submit'])) {
-//     define('DSN', 'mysql:host=localhost;dbname=utswebpro');
-//     define('DBUSER', 'root');
-//     define('DBPASS', '');
-
-//     $db = new PDO(DSN, DBUSER, DBPASS);
-
-//     $id = $_POST['email'];
-//     $password = $_POST['password'];
-//     $captcha = $_POST['captcha'];
-
-//     $sql = "SELECT * FROM admin WHERE id = ?";
-//     $stmt = $db->prepare($sql);
-//     $stmt->execute([$id]);
-//     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//     if (!$row) {
-//         echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" style="margin-right:2%" role="alert">
-//                   <strong class="font-bold">Oops!</strong>
-//                   <span class="block sm:inline"> Wrong username or password.</span>
-//               </div>';
-//     } else {
-//         if($_SESSION['phrase'] != $captcha){
-//             echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-//             <strong class="font-bold">Oops!</strong>
-//             <span class="block sm:inline"> Wrong username or password.</span>
-//             </div>';
-//         }if ($password != $row['pass']) {
-//             echo '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-//                       <strong class="font-bold">Oops!</strong>
-//                       <span class="block sm:inline"> Wrong username or password.</span>
-//                   </div>';
-//         } else {
-//             $_SESSION['email'] = $id;
-//             header('location: ProfileAdmin.php');
-//             exit();
-//         }
-//     }
-
-
-
 $builder = new CaptchaBuilder();
 $builder->build();
 $_SESSION['phrase'] = $builder->getPhrase();

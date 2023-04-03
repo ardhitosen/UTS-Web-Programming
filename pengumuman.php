@@ -41,8 +41,7 @@
         </nav>
     </head>
     <body>
-
-    <div class="container p-4 pb-0" style="background-color: #929fba">
+        <div class="container p-4 pb-0" style="background-color: #929fba">
             <section class="">
                 <div class="row">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -51,79 +50,76 @@
                         </h1>
                     </div>
                 </div>
-    </div>
+            </section>
+        </div>
 
-<div class="typewriter">
-  <h1>PENGUMUMAN PPDB SMP JUAN TERRO TAHUN AJARAN 2023/2024</h1>
-  
-    <style>
-    /* DEMO-SPECIFIC STYLES */
-    .typewriter h1 {
-    color: blue;
-    font-family: monospace;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-        typing 3.5s steps(30, end),
-        blink-caret .5s step-end infinite;
-    justify-content: center;
-    }
+        <div class="typewriter">
+            <h1>PENGUMUMAN PPDB SMP JUAN TERRO TAHUN AJARAN 2023/2024</h1>
+            <style>
+            /* DEMO-SPECIFIC STYLES */
+            .typewriter h1 {
+            color: blue;
+            font-family: monospace;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(30, end),
+                blink-caret .5s step-end infinite;
+            justify-content: center;
+            }
 
-    /* The typing effect */
-    @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-    }
+            /* The typing effect */
+            @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+            }
 
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
-    }
-    </style>
-</div>
-<div class="container">
-    <h1>Status Anda: <?php echo $row['sStatus']; ?></h1>
-    <h3> <?php if($row['bStatus'] == "Approved" && $row['sStatus'] == "Diterima"){
-        echo "Selamat anda telah diterima di sekolah kami!";
-    }else if($row['bStatus'] == "File Ditolak" && $row['sStatus'] == "Belum Diterima"){
-        echo "Berkas anda ditolak. Tolong kirimkan ulang berkas yang baru!";
-    }else if($row['bStatus'] == "Belum Approved" && $row['sStatus'] == "Belum Diterima"){
-        echo "Berkas anda dalam tahap pengecekan oleh admin!";
-    }else if($row['sStatus'] == "Diterima"){
-        echo "Selamat anda lolos seleksi. Silakan lakukan upload berkas!";
-    }else if($row['sStatus'] == "Ditolak"){
-        echo "Mohon maaf, anda tidak lolos masuk ke sekolah kami!";
-    }else if($row['sStatus'] == "Belum Terdaftar"){
-        echo "Pendaftaran anda sedang diseleksi oleh admin!";
-    }
-    ?></h3>
-    <div class="sticky-bottom">
-        <footer
-        
-        <div class="fixed-bottom">
-            <footer
-                class="text-center text-lg-start text-white"
-                style="background-color: #929fba"
-            >
-            <div class="container p-4 pb-0">
-                <section class="">
-                    <div class="row">
-                        <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
-                            <h6 class="text-uppercase mb-1 font-weight-bold">
-                            SMP Juan Terro, Gading Serpong
-                            </h6>
-                            <div>
-                            <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
+            /* The typewriter cursor effect */
+            @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+            }
+            </style>
+        </div>
+        <div class="container">
+            <h1>Status Anda: <?php echo $row['sStatus']; ?></h1>
+            <h3> <?php if($row['bStatus'] == "Approved" && $row['sStatus'] == "Diterima"){
+                echo "Selamat anda telah diterima di sekolah kami!";
+            }else if($row['bStatus'] == "File Ditolak" && $row['sStatus'] == "Belum Diterima"){
+                echo "Berkas anda ditolak. Tolong kirimkan ulang berkas yang baru!";
+            }else if($row['bStatus'] == "Belum Approved" && $row['sStatus'] == "Belum Diterima"){
+                echo "Berkas anda dalam tahap pengecekan oleh admin!";
+            }else if($row['sStatus'] == "Diterima"){
+                echo "Selamat anda lolos seleksi. Silakan lakukan upload berkas!";
+            }else if($row['sStatus'] == "Ditolak"){
+                echo "Mohon maaf, anda tidak lolos masuk ke sekolah kami!";
+            }else if($row['sStatus'] == "Belum Terdaftar"){
+                echo "Pendaftaran anda sedang diseleksi oleh admin!";
+            }
+            ?></h3>
+        </div>
+        <div class="sticky-bottom">
+            <div class="fixed-bottom">
+                <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+                    <div class="container p-4 pb-0">
+                    <section">
+                        <div class="row">
+                            <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-1 font-weight-bold">
+                                SMP Juan Terro, Gading Serpong
+                                </h6>
+                                <div>
+                                <p><i class="fas fa-envelope mr-3"></i> smpjuanterro@ac.id |   021-123456789</p>
+                                </div>
                             </div>
                         </div>
+                    </section>
                     </div>
-                </section>
+                </footer>
             </div>
-            </footer>
         </div>
     </body>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
